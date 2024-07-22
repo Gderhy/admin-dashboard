@@ -1,0 +1,9 @@
+// TYPE: IGNORE
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+}
