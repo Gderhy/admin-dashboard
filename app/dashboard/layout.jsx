@@ -1,5 +1,5 @@
-import Navbar from "@/app/ui/dashboard/navbar/Navbar";
-import Sidebar from "@/app/ui/dashboard/sidebar/Sidebar";
+import Navbar from "@/app/ui/dashboard/navbar/navbar";
+import Sidebar from "@/app/ui/dashboard/sidebar/sidebar";
 
 import styles from "@/app/ui/dashboard/dashboard.module.css";
 
