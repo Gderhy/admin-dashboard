@@ -16,8 +16,8 @@ export default function Transaction() {
         </thead>
         <tbody>
           <tr>
-            <div className={styles.user}>
-              <td>
+            <td>
+              <div className={styles.user}>
                 <Image
                   src="/noavatar.png"
                   width={40}
@@ -25,8 +25,8 @@ export default function Transaction() {
                   className={styles.userImage}
                 />
                 John Doe
-              </td>
-            </div>
+              </div>
+            </td>
             <td>
               <span className={`${styles.status} ${styles.cancelled}`}>
                 Cancelled
@@ -36,8 +36,8 @@ export default function Transaction() {
             <td>$100</td>
           </tr>
           <tr>
-            <div className={styles.user}>
-              <td>
+            <td>
+              <div className={styles.user}>
                 <Image
                   src="/noavatar.png"
                   width={40}
@@ -45,8 +45,8 @@ export default function Transaction() {
                   className={styles.userImage}
                 />
                 John Doe
-              </td>
-            </div>
+              </div>
+            </td>
             <td>
               <span className={`${styles.status} ${styles.pending}`}>
                 Pending
@@ -56,8 +56,8 @@ export default function Transaction() {
             <td>$100</td>
           </tr>
           <tr>
-            <div className={styles.user}>
-              <td>
+            <td>
+              <div className={styles.user}>
                 <Image
                   src="/noavatar.png"
                   width={40}
@@ -65,12 +65,10 @@ export default function Transaction() {
                   className={styles.userImage}
                 />
                 John Doe
-              </td>
-            </div>
+              </div>
+            </td>
             <td>
-              <span className={`${styles.status} ${styles.done}`}>
-                Done
-              </span>
+              <span className={`${styles.status} ${styles.done}`}>Done</span>
             </td>
             <td>12/12/2021</td>
             <td>$100</td>
