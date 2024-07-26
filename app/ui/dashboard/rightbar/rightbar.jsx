@@ -28,7 +28,7 @@ export default function Rightbar() {
         </div>
       </div>
       <div className={styles.item}>
-        <div className={styles.text}>
+        <div className={styles.texts}>
           <span className={styles.notification}>🚀 Coming Soon</span>
           <h3 className={styles.title}>
             New server actions are available, partial pre-rendering is coming
