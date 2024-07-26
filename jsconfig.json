@@ -1,10 +1,10 @@
-// TYPE: IGNORE
 {
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["*"],
       "@public/*": ["public/*"],
+      "@ui/*": ["ui/*"],
     }
   },
 }

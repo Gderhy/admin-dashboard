@@ -101,13 +101,16 @@ export default function Sidebar() {
             <li key={category.title}>
               <span className={styles.category}>{category.title}</span>
               {category.list.map((item) => {
-                console.log(item);
                 return <MenuLink item={item} key={item.title} />;
               })}
             </li>
           );
         })}
       </ul>
+      <button className={styles.logout}>
+        <MdLogout />
+        Logout
+      </button>
     </div>
   );
 }
