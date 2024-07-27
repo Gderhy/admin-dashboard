@@ -35,12 +35,7 @@ export default function SingleUserPage() {
           <option value={true}>Yes</option>
           <option value={false}>No</option>
         </select>
-        <textarea
-          name="address"
-          id="address"
-          rows="16"
-          placeholder="Address"
-        ></textarea>
+        <input type="address" placeholder="address" name="address" />
         <button type="submit">Submit</button>
       </form>
       </div>
