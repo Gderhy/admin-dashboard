@@ -10,7 +10,7 @@ export default function UsersPage() {
       <div className={styles.container}>
         <div className={styles.top}>
           <Search placeholder="Search for a user..." />
-          <Link href="">
+          <Link href="/dashboard/users/add">
             <button className={styles.addButton}>Add new user</button>
           </Link>
         </div>
