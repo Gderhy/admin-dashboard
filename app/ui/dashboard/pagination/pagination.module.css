@@ -1,0 +1,22 @@
+.container {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #5d57c9;
+    color: var(--text);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+}
