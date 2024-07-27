@@ -37,14 +37,16 @@ export default function UsersPage() {
               <td>Admin</td>
               <td>Active</td>
               <td>
-                <Link href="">
-                  <button className={`${styles.button} ${styles.view}`}>
-                    View
+                <div className={styles.buttons}>
+                  <Link href="">
+                    <button className={`${styles.button} ${styles.view}`}>
+                      View
+                    </button>
+                  </Link>
+                  <button className={`${styles.button} ${styles.delete}`}>
+                    Delete
                   </button>
-                </Link>
-                <button className={`${styles.button} ${styles.delete}`}>
-                  Delete
-                </button>
+                </div>
               </td>
             </tr>
             <tr>
@@ -59,14 +61,16 @@ export default function UsersPage() {
               <td>Admin</td>
               <td>Active</td>
               <td>
-                <Link href="">
-                  <button className={`${styles.button} ${styles.view}`}>
-                    View
+                <div className={styles.buttons}>
+                  <Link href="">
+                    <button className={`${styles.button} ${styles.view}`}>
+                      View
+                    </button>
+                  </Link>
+                  <button className={`${styles.button} ${styles.delete}`}>
+                    Delete
                   </button>
-                </Link>
-                <button className={`${styles.button} ${styles.delete}`}>
-                  Delete
-                </button>
+                </div>
               </td>
             </tr>
             <tr>
@@ -81,14 +85,16 @@ export default function UsersPage() {
               <td>Admin</td>
               <td>Active</td>
               <td>
-                <Link href="">
-                  <button className={`${styles.button} ${styles.view}`}>
-                    View
+                <div className={styles.buttons}>
+                  <Link href="">
+                    <button className={`${styles.button} ${styles.view}`}>
+                      View
+                    </button>
+                  </Link>
+                  <button className={`${styles.button} ${styles.delete}`}>
+                    Delete
                   </button>
-                </Link>
-                <button className={`${styles.button} ${styles.delete}`}>
-                  Delete
-                </button>
+                </div>
               </td>
             </tr>
           </tbody>
