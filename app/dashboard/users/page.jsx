@@ -5,10 +5,9 @@ import Image from "next/image";
 import Pagination from "app/ui/dashboard/pagination/pagination";
 import { fetchUsers } from "app/lib/data";
 
-export default async function UsersPage() {
-  const users = await fetchUsers();
-
-  console.log(users);
+export default async function UsersPage({ searchParams }) {
+  const q = searchParams?.q || "";
+  const users = await fetchUsers(q);
 
   return (
     <div className={styles.container}>
@@ -30,7 +29,7 @@ export default async function UsersPage() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => {
+          {users?.map((user) => {
             return (
               <tr key={user.id}>
                 <td>
@@ -45,7 +44,7 @@ export default async function UsersPage() {
                   </div>
                 </td>
                 <td>{user.email}</td>
-                <td>{user.createdAt}</td>
+                <td>{user.createdAt?.toString().slice(4, 16)}</td>
                 <td>{user.isAdmin ? "Admin" : "Client"}</td>
                 <td>{user.isActive ? "Active" : "Disabled"}</td>
                 <td>
@@ -63,96 +62,100 @@ export default async function UsersPage() {
               </tr>
             );
           })}
-          <tr>
-            <td>
-              <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
-                John Doe
-              </div>
-            </td>
-            <td>example@email.com</td>
-            <td>2021-09-01</td>
-            <td>Admin</td>
-            <td>Active</td>
-            <td>
-              <div className={styles.buttons}>
-                <Link href="">
-                  <button className={`${styles.button} ${styles.view}`}>
-                    View
-                  </button>
-                </Link>
-                <button className={`${styles.button} ${styles.delete}`}>
-                  Delete
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
-                John Doe
-              </div>
-            </td>
-            <td>example@email.com</td>
-            <td>2021-09-01</td>
-            <td>Admin</td>
-            <td>Active</td>
-            <td>
-              <div className={styles.buttons}>
-                <Link href="">
-                  <button className={`${styles.button} ${styles.view}`}>
-                    View
-                  </button>
-                </Link>
-                <button className={`${styles.button} ${styles.delete}`}>
-                  Delete
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
-                John Doe
-              </div>
-            </td>
-            <td>example@email.com</td>
-            <td>2021-09-01</td>
-            <td>Admin</td>
-            <td>Active</td>
-            <td>
-              <div className={styles.buttons}>
-                <Link href="">
-                  <button className={`${styles.button} ${styles.view}`}>
-                    View
-                  </button>
-                </Link>
-                <button className={`${styles.button} ${styles.delete}`}>
-                  Delete
-                </button>
-              </div>
-            </td>
-          </tr>
         </tbody>
       </table>
       <Pagination />
     </div>
   );
 }
+
+// Fake data:
+/*
+<tr>
+            <td>
+              <div className={styles.user}>
+                <Image
+                  src="/noavatar.png"
+                  width={40}
+                  height={40}
+                  className={styles.userImage}
+                />
+                John Doe
+              </div>
+            </td>
+            <td>example@email.com</td>
+            <td>2021-09-01</td>
+            <td>Admin</td>
+            <td>Active</td>
+            <td>
+              <div className={styles.buttons}>
+                <Link href="">
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
+                <button className={`${styles.button} ${styles.delete}`}>
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div className={styles.user}>
+                <Image
+                  src="/noavatar.png"
+                  width={40}
+                  height={40}
+                  className={styles.userImage}
+                />
+                John Doe
+              </div>
+            </td>
+            <td>example@email.com</td>
+            <td>2021-09-01</td>
+            <td>Admin</td>
+            <td>Active</td>
+            <td>
+              <div className={styles.buttons}>
+                <Link href="">
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
+                <button className={`${styles.button} ${styles.delete}`}>
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div className={styles.user}>
+                <Image
+                  src="/noavatar.png"
+                  width={40}
+                  height={40}
+                  className={styles.userImage}
+                />
+                John Doe
+              </div>
+            </td>
+            <td>example@email.com</td>
+            <td>2021-09-01</td>
+            <td>Admin</td>
+            <td>Active</td>
+            <td>
+              <div className={styles.buttons}>
+                <Link href="">
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
+                <button className={`${styles.button} ${styles.delete}`}>
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+*/

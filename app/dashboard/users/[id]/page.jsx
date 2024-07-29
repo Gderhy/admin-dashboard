@@ -5,7 +5,6 @@ import { fetchUser } from "app/lib/data";
 export default async function SingleUserPage({ params }) {
   const user = await fetchUser(params.id);
 
-  console.log(user);
   return (
     <div className={styles.container}>
       <div className={styles.infoContainer}>
@@ -22,23 +21,23 @@ export default async function SingleUserPage({ params }) {
         <form className={styles.form}>
           <input
             type="text"
-            value={user.username || "No username"}
+            value={user.username}
             name="username"
             required
           />
           <input
             type="email"
-            value={user.email || "email"}
+            value={user.email}
             name="email"
             required
           />
           <input
             type="password"
-            value="password"
+            value={user.password}
             name="password"
             required
           />
-          <input type="phone" value="phone" name="phone" />
+          <input type="phone" value={user.phone} name="phone" />
           <select name="isAdmin" id="isAdmin">
             <option value={false}>Is Admin?</option>
             <option value={true}>Yes</option>
@@ -49,7 +48,7 @@ export default async function SingleUserPage({ params }) {
             <option value={true}>Yes</option>
             <option value={false}>No</option>
           </select>
-          <input type="address" placeholder="address" name="address" />
+          <input type="address" value={user.address} name="address" />
           <button type="submit">Submit</button>
         </form>
       </div>
